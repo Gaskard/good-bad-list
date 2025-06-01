@@ -1,0 +1,15 @@
+.logo {
+  display: flex;
+  margin-top: 47px;
+  align-items: center;
+  &__img {
+    width: 46px;
+    height: 52px;
+    margin-left: 20px;
+    color: #34574A;
+  }
+  &__header {
+    margin-left: 20px;
+    color: #34574A;
+  }
+}
