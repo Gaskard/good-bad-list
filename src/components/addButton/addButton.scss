@@ -1,0 +1,29 @@
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  width: 266px;
+  height: 236px;
+  cursor: pointer;
+  border-radius: 30px ;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: #34574a;
+  background-color: #C4DCD3;
+  border: none;
+  user-select: none;
+  &:active {
+    transform: scale(0.97);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+  * {
+    background-color: transparent;
+  }
+  &__wrapper {
+
+  }
+}

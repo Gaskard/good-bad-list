@@ -1,4 +1,6 @@
-import Menu from '../menu/menu.jsx'
+import Menu from '../menu/Menu.jsx'
+import AddButton from '../addButton/AddButton.jsx'
+
 import './app.scss'
 
 function App() {
@@ -7,6 +9,7 @@ function App() {
   return (
     <div className="app">
       <Menu />
+      <AddButton />
     </div>
   )
 }

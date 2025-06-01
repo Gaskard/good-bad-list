@@ -1,15 +1,19 @@
-.logo {
-  display: flex;
-  margin-top: 47px;
-  align-items: center;
-  &__img {
-    width: 46px;
-    height: 52px;
-    margin-left: 20px;
-    color: #34574A;
-  }
-  &__header {
-    margin-left: 20px;
-    color: #34574A;
+.menu {
+  &__logo {
+    display: flex;
+    margin-top: 47px;
+    align-items: center;
+    justify-content: center;
+    &-img {
+      width: 46px;
+      height: 52px;
+      margin-left: 20px;
+      color: #34574A;
+    }
+    &-header {
+      font-family: "Josefin Sans", sans-serif;
+      margin-left: 20px;
+      color: #34574A;
+    }
   }
 }
