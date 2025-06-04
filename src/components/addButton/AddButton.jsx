@@ -5,7 +5,7 @@ const addButton = () => {
 	return (
 		<button className="button">
 			<div className="button__wrapper">
-				<p className="button__wrapper-text">add a task</p>
+				<p className="button__wrapper-text">add a product</p>
 				<img src={plusIcon} alt="" className="button__wrapper-plus"/>
 			</div>
 		</button>
