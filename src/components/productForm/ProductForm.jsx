@@ -25,6 +25,7 @@ const ProductForm = () => {
 						<option value="bad">Bad</option>
 					</select>
 				</div>
+				<button className="product__form-submit">Submit</button>
 			</form>
 		</div>
 	)
