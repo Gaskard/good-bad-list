@@ -8,6 +8,9 @@
   margin: 0 auto;
   width: 100vw;
   height: 80vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   &-title {
     font-family: "Josefin Sans", sans-serif;
     border-bottom: 3px solid grey;
@@ -21,6 +24,7 @@
     padding: 20px 50px;
     height: 100vh;
     width: 50vw;
+    background-color: white;
   }
   &-field {
     display: flex;
@@ -46,5 +50,12 @@
     color: white;
     height: 50px;
     font-size: 30px;
+    cursor: pointer;
+  }
+  &-cancel {
+    font-family: "Josefin Sans", sans-serif;
+    cursor: pointer;
+    border: none;
+    background-color: white;
   }
 }
