@@ -5,8 +5,11 @@
   height: 391px;
   margin-top: 50px;
   background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
   &__text {
     font-family: "Josefin Sans", sans-serif;
+    padding: 16px 16px 0 16px;
     &-rate {
       color: red;
     }

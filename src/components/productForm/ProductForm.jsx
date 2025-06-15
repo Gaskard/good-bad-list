@@ -1,7 +1,7 @@
 import './productForm.scss'
 import {useState} from 'react'
 
-const ProductForm = ({handleToggleForm, handleAddProduct}) => {
+const ProductForm = ({handleToggleForm, handleAddProduct, setShowProductList, setShowForm}) => {
 	
 	const [formData, setFormData] = useState({
 		name: '',
@@ -35,6 +35,8 @@ const ProductForm = ({handleToggleForm, handleAddProduct}) => {
 			handleAddProduct(formData)
 			setFormData({name: '', description: '', image: null, quality: ''})
 		}
+		setShowProductList(true);
+		setShowForm(false);
 	}
 	
 	return (
