@@ -45,19 +45,19 @@ const ProductForm = ({handleToggleForm, handleAddProduct, setShowProductList, se
 				<h2 className="product__form-title">Add product</h2>
 				<div className="product__form-field">
 					<label className="product__form-label" htmlFor="">Name</label>
-					<input value={name} name="name" onChange={handleChange} className="product__form-input" type="text"/>
+					<input required value={name} name="name" onChange={handleChange} className="product__form-input" type="text"/>
 				</div>
 				<div className="product__form-field">
 					<label className="product__form-label" htmlFor="">Description</label>
-					<input value={description} name="description" onChange={handleChange} className="product__form-input" type="text"/>
+					<input required value={description} name="description" onChange={handleChange} className="product__form-input" type="text"/>
 				</div>
 				<div className="product__form-field">
 					<label className="product__form-label" id="photo" htmlFor="photo">Photo</label>
-					<input name="image" onChange={handleChange} className="product__form-input" type="file" />
+					<input required name="image" onChange={handleChange} className="product__form-input" type="file" />
 				</div>
 				<div  className="product__form-field">
 					<label className="product__form-label" htmlFor="">Good or bad</label>
-					<select value={quality} name="quality" onChange={handleChange} id="type" className="product__form-input">
+					<select required value={quality} name="quality" onChange={handleChange} id="type" className="product__form-input">
 						<option value="">Choose...</option>
 						<option value="good">Good</option>
 						<option value="bad">Bad</option>

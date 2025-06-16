@@ -1,8 +1,8 @@
 import './productCard.scss'
 
-const ProductCard = ({product, onDelete}) => {
+const ProductCard = ({product, onDelete, onClick}) => {
 	return (
-		<div className="product">
+		<div onClick={onClick} className="product">
 			<img className="product__img" src={product.image} alt=""/>
 			<div className="product__text">
 				<h2 className="product__text-name">{product.name}</h2>
@@ -11,7 +11,11 @@ const ProductCard = ({product, onDelete}) => {
 			</div>
 			<div className="product__buttons">
 				<button className="product__buttons-edit">Edit</button>
-				<button onClick={onDelete} className="product__buttons-delete">Delete</button>
+				<button onClick={(e) =>{
+					e.stopPropagation();
+					onDelete();
+				}}
+				        className="product__buttons-delete">Delete</button>
 			</div>
 		</div>
 	)
