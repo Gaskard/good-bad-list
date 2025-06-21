@@ -5,7 +5,9 @@ import ProductModal from '../productModal/ProductModal.jsx'
 
 import './app.scss'
 
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
+import {addProduct} from '../../api/addProduct'
+import {getProducts} from '../../api/getProduct'
 import ProductList from '../productList/ProductList.jsx'
 
 function App() {
@@ -15,12 +17,19 @@ function App() {
   const [showProductList, setShowProductList] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState(null)
   
+  useEffect(() => {
+    getProducts().then((fetchesProducts) => {
+      setProducts(fetchesProducts)
+    })
+  }, [])
+  
   const handleToggleForm = () => {
     setShowForm((prev) => !prev)
   }
   
-  const handleAddProduct = (product) => {
+  const handleAddProduct = async (product) => {
     setProducts((prev) => [...prev, product])
+    await addProduct(product)
   }
   
   const handleRemoveProduct = (id) => {
