@@ -7,7 +7,8 @@ import './app.scss'
 
 import {useEffect, useState} from 'react'
 import {addProduct} from '../../api/addProduct'
-import {getProducts} from '../../api/getProduct'
+import {getProduct} from '../../api/getProduct'
+import {removeProduct} from '../../api/removeProduct'
 import ProductList from '../productList/ProductList.jsx'
 
 function App() {
@@ -18,8 +19,11 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState(null)
   
   useEffect(() => {
-    getProducts().then((fetchesProducts) => {
+    getProduct().then((fetchesProducts) => {
       setProducts(fetchesProducts)
+      if (fetchesProducts.length > 0) {
+        setShowProductList(true)
+      }
     })
   }, [])
   
@@ -28,12 +32,14 @@ function App() {
   }
   
   const handleAddProduct = async (product) => {
-    setProducts((prev) => [...prev, product])
-    await addProduct(product)
+    const productWithId = await addProduct(product)
+    setProducts((prev) => [...prev, productWithId])
   }
   
-  const handleRemoveProduct = (id) => {
-    setProducts((prev) => prev.filter((_, index) => index !== id))
+  const handleRemoveProduct = async (id) => {
+    await removeProduct(id)
+    setProducts((prev) => prev.filter(product => product.id !== id))
+    console.log(id)
   }
 
   return (

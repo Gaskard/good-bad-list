@@ -1,9 +1,13 @@
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.js";
 
 export async function addProduct(product) {
 	try {
-		await addDoc(collection(db, "products"), product);
+		const docRef = await addDoc(collection(db, "products"), {
+			...product,
+			createdAt: serverTimestamp(),
+		});
+		return {id: docRef.id, ...product};
 	} catch (error) {
 		console.error("Ошибка добавления:", error);
 	}
